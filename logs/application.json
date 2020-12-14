@@ -1,0 +1,47 @@
+{"@timestamp":"2020-12-14T08:56:55.568+02:00","message":"\n\n! @7i51n0e1b - Internal server error, for (OPTIONS) [/] ->\n "}
+{"@timestamp":"2020-12-14T08:58:20.664+02:00","message":"Stopping Akka HTTP server..."}
+{"@timestamp":"2020-12-14T08:58:20.674+02:00","message":"Terminating server binding for /[0:0:0:0:0:0:0:0]:9000"}
+{"@timestamp":"2020-12-14T08:58:20.815+02:00","message":"Running provided shutdown stop hooks"}
+{"@timestamp":"2020-12-14T08:58:20.815+02:00","message":"Task [shutdown-application-dev-mode] failed in phase [service-stop]: Unexpected exception[MatchError: org.apache.logging.log4j.simple.SimpleLoggerContext@1ea4cc86 (of class org.apache.logging.log4j.simple.SimpleLoggerContext)]"}
+{"@timestamp":"2020-12-14T08:58:22.388+02:00","message":"Slf4jLogger started"}
+{"@timestamp":"2020-12-14T08:58:22.445+02:00","message":"Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):\n\n    play.filters.csrf.CSRFFilter\n    play.filters.headers.SecurityHeadersFilter\n    play.filters.hosts.AllowedHostsFilter\n    filters.ContentSecurityPolicyFilter\n    play.filters.cors.CORSFilter\n"}
+{"@timestamp":"2020-12-14T08:58:22.501+02:00","message":"Application started (Dev) (no global state)"}
+{"@timestamp":"2020-12-14T08:58:47.883+02:00","message":"Slf4jLogger started"}
+{"@timestamp":"2020-12-14T08:58:47.961+02:00","message":"Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):\n\n    play.filters.csrf.CSRFFilter\n    play.filters.headers.SecurityHeadersFilter\n    play.filters.hosts.AllowedHostsFilter\n    filters.ContentSecurityPolicyFilter\n    play.filters.cors.CORSFilter\n"}
+{"@timestamp":"2020-12-14T08:58:48.045+02:00","message":"Application started (Dev) (no global state)"}
+{"@timestamp":"2020-12-14T08:59:46.398+02:00","message":"Checking the ORIGIN ","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T08:59:46.399+02:00","message":"originCheck: originValue = http://localhost:3000","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T08:59:48.073+02:00","message":"Checking the ORIGIN ","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T08:59:48.078+02:00","message":"originCheck: originValue = http://localhost:3000","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T08:59:50.436+02:00","message":"[source] Element: {\"rank\":\"4\",\"suit\":\"d\",\"value\":4}"}
+{"@timestamp":"2020-12-14T08:59:51.717+02:00","message":"[source] Element: {\"rank\":\"6\",\"suit\":\"h\",\"value\":6}"}
+{"@timestamp":"2020-12-14T09:01:23.947+02:00","message":"Stopping Akka HTTP server..."}
+{"@timestamp":"2020-12-14T09:01:23.956+02:00","message":"Terminating server binding for /[0:0:0:0:0:0:0:0]:9000"}
+{"@timestamp":"2020-12-14T09:01:24.086+02:00","message":"Task [shutdown-application-dev-mode] failed in phase [service-stop]: Unexpected exception[MatchError: org.apache.logging.log4j.simple.SimpleLoggerContext@5b493cf1 (of class org.apache.logging.log4j.simple.SimpleLoggerContext)]"}
+{"@timestamp":"2020-12-14T09:01:24.086+02:00","message":"Running provided shutdown stop hooks"}
+{"@timestamp":"2020-12-14T09:01:24.904+02:00","message":"Slf4jLogger started"}
+{"@timestamp":"2020-12-14T09:01:24.943+02:00","message":"Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):\n\n    play.filters.csrf.CSRFFilter\n    play.filters.headers.SecurityHeadersFilter\n    play.filters.hosts.AllowedHostsFilter\n    filters.ContentSecurityPolicyFilter\n    play.filters.cors.CORSFilter\n"}
+{"@timestamp":"2020-12-14T09:01:24.959+02:00","message":"Application started (Dev) (no global state)"}
+{"@timestamp":"2020-12-14T09:06:47.302+02:00","message":"Slf4jLogger started"}
+{"@timestamp":"2020-12-14T09:06:47.371+02:00","message":"Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):\n\n    play.filters.csrf.CSRFFilter\n    play.filters.headers.SecurityHeadersFilter\n    play.filters.hosts.AllowedHostsFilter\n    filters.ContentSecurityPolicyFilter\n    play.filters.cors.CORSFilter\n"}
+{"@timestamp":"2020-12-14T09:06:47.441+02:00","message":"Application started (Dev) (no global state)"}
+{"@timestamp":"2020-12-14T09:06:47.738+02:00","message":"Checking the ORIGIN ","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T09:06:47.743+02:00","message":"originCheck: originValue = http://localhost:3000","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T09:07:02.238+02:00","message":"Checking the ORIGIN ","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T09:07:02.243+02:00","message":"originCheck: originValue = http://localhost:3000","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T09:08:10.545+02:00","message":"Checking the ORIGIN ","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T09:08:10.547+02:00","message":"originCheck: originValue = http://localhost:3000","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T09:08:18.408+02:00","message":"Checking the ORIGIN ","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T09:08:18.409+02:00","message":"originCheck: originValue = http://localhost:3000","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T09:08:20.740+02:00","message":"Checking the ORIGIN ","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T09:08:20.742+02:00","message":"originCheck: originValue = http://localhost:3000","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T09:08:24.071+02:00","message":"[source] Element: {\"rank\":\"7\",\"suit\":\"d\",\"value\":7}"}
+{"@timestamp":"2020-12-14T09:08:27.408+02:00","message":"Stopping Akka HTTP server..."}
+{"@timestamp":"2020-12-14T09:08:27.414+02:00","message":"Terminating server binding for /[0:0:0:0:0:0:0:0]:9000"}
+{"@timestamp":"2020-12-14T09:08:27.476+02:00","message":"Running provided shutdown stop hooks"}
+{"@timestamp":"2020-12-14T09:08:53.544+02:00","message":"Slf4jLogger started"}
+{"@timestamp":"2020-12-14T09:08:53.620+02:00","message":"Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):\n\n    play.filters.csrf.CSRFFilter\n    play.filters.headers.SecurityHeadersFilter\n    play.filters.hosts.AllowedHostsFilter\n    filters.ContentSecurityPolicyFilter\n    play.filters.cors.CORSFilter\n"}
+{"@timestamp":"2020-12-14T09:08:53.699+02:00","message":"Application started (Dev) (no global state)"}
+{"@timestamp":"2020-12-14T09:08:54.074+02:00","message":"Checking the ORIGIN ","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T09:08:54.075+02:00","message":"originCheck: originValue = http://localhost:3000","host":"localhost:9000","path":"/play"}
+{"@timestamp":"2020-12-14T09:09:01.774+02:00","message":"[source] Element: {\"rank\":\"8\",\"suit\":\"h\",\"value\":8}"}
