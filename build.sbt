@@ -1,33 +1,42 @@
-import play.core.PlayVersion.akkaVersion
+import com.typesafe.sbt.SbtNativePackager.autoImport.NativePackagerHelper._
 
-val circeVersion = "0.13.0"
+val Http4sVersion  = "0.21.0-M5"
+val Specs2Version  = "4.8.0"
+val LogbackVersion = "1.2.3"
+val CirceVersion   = "0.13.0"
 
 lazy val root = (project in file("."))
-  .enablePlugins(PlayScala)
   .settings(
-    name := """blackjack-server""",
-    version := "2.8.x",
+    organization := "com.jenovs",
+    name := "chatserver",
+    version := Http4sVersion,
     scalaVersion := "2.13.1",
     libraryDependencies ++= Seq(
-      guice,
-      "org.webjars" %% "webjars-play" % "2.8.0",
-      "org.webjars" % "flot" % "0.8.3-1",
-      "org.webjars" % "bootstrap" % "3.3.7",
-      "net.logstash.logback" % "logstash-logback-encoder" % "6.2",
-      "org.jsoup" % "jsoup" % "1.12.1",
-      "ch.qos.logback" % "logback-classic" % "1.2.3",
-      "com.typesafe.akka" %% "akka-slf4j" % akkaVersion,
-      "com.typesafe.akka" %% "akka-testkit" % akkaVersion % Test,
-      "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % Test,
-      "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test,
-      "io.circe" %% "circe-core" % circeVersion,
-      "io.circe" %% "circe-generic" % circeVersion,
-      "io.circe" %% "circe-generic-extras" % circeVersion,
-      "io.circe" %% "circe-parser" % circeVersion
+      "org.http4s"     %% "http4s-blaze-server"  % Http4sVersion,
+      "org.http4s"     %% "http4s-dsl"           % Http4sVersion,
+      "org.specs2"     %% "specs2-core"          % Specs2Version % "test",
+      "ch.qos.logback" % "logback-classic"       % LogbackVersion,
+      "io.circe"       %% "circe-core"           % CirceVersion,
+      "io.circe"       %% "circe-generic"        % CirceVersion,
+      "io.circe"       %% "circe-generic-extras" % CirceVersion,
+      "io.circe"       %% "circe-parser"         % CirceVersion
     ),
-    scalacOptions ++= Seq(
-      "-feature",
-      "-deprecation",
-      "-Xfatal-warnings"
-    )
+    addCompilerPlugin("org.typelevel" %% "kind-projector"     % "0.10.3"),
+    addCompilerPlugin("com.olegpy"    %% "better-monadic-for" % "0.3.1"),
+    mappings in Universal ++= directory(baseDirectory.value / "static"),
+    buildInfoKeys := Seq[BuildInfoKey](name, version),
+    buildInfoPackage := "com.jenovs.chatserver",
+    turbo := true
   )
+  .enablePlugins(JavaAppPackaging)
+  .enablePlugins(BuildInfoPlugin)
+
+scalacOptions ++= Seq(
+  "-deprecation",
+  "-encoding",
+  "UTF-8",
+  "-language:higherKinds",
+  "-language:postfixOps",
+  "-feature",
+  "-Xfatal-warnings"
+)
