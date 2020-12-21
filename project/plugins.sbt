@@ -1,8 +1,11 @@
 addSbtPlugin("org.lyranthe.sbt" % "partial-unification" % "1.1.2")
-addSbtPlugin("io.spray" % "sbt-revolver" % "0.9.1")
+addSbtPlugin("io.spray"         % "sbt-revolver"        % "0.9.1")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.4.1")
 
 // https://github.com/sbt/sbt-buildinfo
 addSbtPlugin("com.eed3si9n" % "sbt-buildinfo" % "0.9.0")
 
+// Plugins for deployment to Heroku
+addSbtPlugin("com.heroku"       % "sbt-heroku"          % "2.1.4")
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.5.2")

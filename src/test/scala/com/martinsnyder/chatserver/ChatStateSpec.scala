@@ -1,4 +1,4 @@
-package com.jenovs.chatserver
+package com.jenovs.server
 
 import org.specs2.matcher.MatchResult
 
