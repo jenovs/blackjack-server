@@ -1,4 +1,4 @@
-package com.jenovs.chatserver
+package com.jenovs.server
 
 import java.io.File
 import java.util.concurrent.Executors

@@ -1,4 +1,4 @@
-package com.jenovs.chatserver
+package com.jenovs.server
 
 /*
  * Trait for any message that can be sent downstream to one or more users

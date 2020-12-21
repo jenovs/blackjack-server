@@ -1,4 +1,4 @@
-package com.jenovs.chatserver
+package com.jenovs.server
 
 import scala.util.Try
 
@@ -10,14 +10,17 @@ sealed trait InputMessage {
 }
 
 case class JoinTable(user: String, tableNumber: Int, displayName: String) extends InputMessage
-case class Bet(user: String, amount: Long)                                extends InputMessage
-case class Hit(user: String)                                              extends InputMessage
-case class Stand(user: String)                                            extends InputMessage
-case class Chat(user: String, text: String)                               extends InputMessage
-case class EnterRoom(user: String, room: String)                          extends InputMessage
-case class Disconnect(user: String)                                       extends InputMessage
-case class UnknownCommand(user: String, text: String)                     extends InputMessage
-case class Check(user: String = "")                                       extends InputMessage
+//
+case class Bet(user: String, amount: Long) extends InputMessage
+case class Hit(user: String)               extends InputMessage
+case class Stand(user: String)             extends InputMessage
+case class Split(user: String)             extends InputMessage
+//
+case class Chat(user: String, text: String)           extends InputMessage
+case class EnterRoom(user: String, room: String)      extends InputMessage
+case class Disconnect(user: String)                   extends InputMessage
+case class UnknownCommand(user: String, text: String) extends InputMessage
+case class Check(user: String = "")                   extends InputMessage
 
 object InputMessage {
   val DefaultRoomName = "default"
@@ -33,6 +36,7 @@ object InputMessage {
       case ("#bet", amount, _) => Bet(user, Try(amount.trim.toLong).getOrElse(0))
       case ("#hit", _, _)      => Hit(user)
       case ("#stand", _, _)    => Stand(user)
+      case ("#split", _, _)    => Split(user)
       case (s"#$cmd", _, _)    => UnknownCommand(user, s"#info Unknown command - $cmd")
       case _                   => Chat(user, text)
     }

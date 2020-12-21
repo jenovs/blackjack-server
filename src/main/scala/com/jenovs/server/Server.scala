@@ -1,4 +1,4 @@
-package com.jenovs.chatserver
+package com.jenovs.server
 
 import cats.effect._
 import cats.effect.concurrent.Ref
@@ -13,12 +13,12 @@ import org.http4s.server.middleware.CORS
 import scala.concurrent.duration._
 import scala.util.Try
 import org.http4s.websocket.WebSocketFrame.Ping
-import com.jenovs.chatserver.ChatState.Dealing
+import com.jenovs.server.ChatState._
 
 /*
  * Application entry point
  */
-object ChatServer extends IOApp {
+object Server extends IOApp {
   def run(args: List[String]): IO[ExitCode] = {
     // Get a tcp port that might be specified on the command line or in an environment variable
     val httpPort = args.headOption
@@ -47,11 +47,15 @@ object ChatServer extends IOApp {
              .fixedRate[IO](1.second)
              .evalMap(_ => {
                for {
-                 state                  <- ref.get
-                 (nextState, isUpdated) = state.check()
-                 _                      <- if (isUpdated) ref.set(nextState) else IO.unit
-                 table                  = nextState.getTableJson()
-               } yield if (isUpdated) Stream.emit(SendToAll(table)) else Stream.empty
+                 state                     <- ref.get
+                 (nextState, update, emit) = state.check()
+                 _                         <- if (update) ref.set(nextState) else IO.unit
+                 table                     = nextState.getTableJson()
+                 //  } yield if (emit == EmitYes) Stream.emit(SendToAll(table)) else Stream.empty
+               } yield emit match {
+                 case EmitYes => Stream.emit(SendToAll(table))
+                 case EmitNo  => Stream.empty
+               }
              })
              .flatMap(identity)
              .through(topic.publish)
